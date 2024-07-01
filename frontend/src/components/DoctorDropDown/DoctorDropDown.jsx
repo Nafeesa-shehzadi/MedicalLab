@@ -22,7 +22,7 @@ function DcotorsDropDown(testName, testResult = null) {
       testName: testName.testName,
       testResult: testResult.testResult,
       payment: "Pending",
-      price: "100",
+      price: "500",
       patientGender: loginUser.gender,
       patientName: loginUser.name,
       bookedOn: `${new Date()}`,

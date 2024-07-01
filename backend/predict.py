@@ -6,7 +6,7 @@ import json
 
 # Disassemble the pickled model
 
-with open('./ai-models/diabetes.pkl', 'rb') as model_fileL:
+with open('./aimodels/diabetes.pkl', 'rb') as model_fileL:
     model = pickle.load(model_fileL)
 data = list(json.loads(sys.argv[3]).values())
 data_array = np.array(data).reshape(1, -1)

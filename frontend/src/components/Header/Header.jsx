@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useContext } from "react";
-import logo from "../../assets/images/logo.png";
+import Logo1 from "../../assets/images/logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import { authContext } from "../../context/AuthContext.jsx";
@@ -9,9 +9,9 @@ const navLinks = [
     display: "Home",
   },
   {
-  path: "/symptomchk",
-  display: "HealthPredict",
-},
+    path: "/symptomchk",
+    display: "HealthPredict",
+  },
   {
     path: "/doctors",
     display: "find a Doctor",
@@ -54,14 +54,13 @@ const Header = () => {
         <div className="flex item-center justify-between">
           {/* ===========Logo ==========*/}
           <div>
-            <img src={logo} alt="" />
+            <img src={Logo1} alt="" />
           </div>
           {/* =========== Menu ==========*/}
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
             <ul className="menu flex items-center gap-[2.7rem]">
               {navLinks.map((link, index) => (
                 <li key={index}>
-                  
                   <NavLink
                     to={link.path}
                     className={(navClass) =>

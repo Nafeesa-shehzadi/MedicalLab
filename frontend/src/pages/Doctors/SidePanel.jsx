@@ -12,6 +12,7 @@ const SidePanel = ({ doctorId, ticketPrice, timeSlots }) => {
     try {
       const res = await fetch(
         `${BASE_URL}/bookings/checkout-session/${doctorId}`,
+
         {
           method: "post",
           headers: {
@@ -19,6 +20,7 @@ const SidePanel = ({ doctorId, ticketPrice, timeSlots }) => {
           },
         }
       );
+      console.log(doctorId);
 
       const data = await res.json();
 

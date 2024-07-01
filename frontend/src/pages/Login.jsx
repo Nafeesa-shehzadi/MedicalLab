@@ -85,6 +85,11 @@ const Login = () => {
               required
             />
           </div>
+          <div className="mb-5">
+            <Link to="/forgot-password" className="text-primaryColor">
+              Forgot Password?
+            </Link>
+          </div>
 
           <div className="mt-7">
             <button

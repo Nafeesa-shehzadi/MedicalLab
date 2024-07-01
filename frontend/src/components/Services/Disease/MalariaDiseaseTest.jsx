@@ -44,7 +44,7 @@ const MalariaDiseaseTest = () => {
       let pred = match[1].split(",").map(Number);
       console.log(pred);
       let threshold = 0.859;
-      let threshold1 = 0.141;
+      let threshold1 = 0.14;
       let classification =
         pred[1] >= threshold && pred[0] >= threshold1 ? 1 : 0;
       console.log("Classification:", classification);

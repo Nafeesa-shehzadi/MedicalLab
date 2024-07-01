@@ -39,7 +39,7 @@ export const getCheckoutSession = async (req, res) => {
     const booking = new Booking({
       doctor: doctor._id,
       user: user._id,
-      ticketPrice: ticketPrice,
+      ticketPrice: doctor.ticketPrice,
       session: session.id,
     });
     await booking.save();

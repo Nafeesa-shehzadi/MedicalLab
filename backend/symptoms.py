@@ -22,10 +22,12 @@ with open(r"C:\Users\HP_Laptop\Desktop\AI-MedLab\backend\aimodels\svc.pkl", 'rb'
 
 def get_predicted_value(symptoms):
     print(symptoms)
+    symptoms = symptoms.split(',')  # Split the string into individual symptoms
+
     input_vector = np.zeros(len(symptoms_dict))
     for symptom in symptoms:
-        if symptom in symptoms_dict:
-            input_vector[symptoms_dict[symptom]] = 1
+        if symptom.strip() in symptoms_dict:  # Use strip() to remove any leading or trailing whitespace
+            input_vector[symptoms_dict[symptom.strip()]] = 1
         else:
             print(f"Warning: symptom '{symptom}' not found in symptoms_dict")
     return diseases_list[model.predict([input_vector])[0]]
@@ -50,10 +52,12 @@ def helper(dis):
 
 
     return desc,pre,med,die,wrkout
-data=sys.argv[3]
-data_dict = json.loads(data)
-symptoms = data_dict['data']
-predicted_disease = get_predicted_value(symptoms)
+
+data = json.loads(sys.argv[3])
+data_dict = json.loads(data['dataInString'])
+symptoms_string = data_dict['data']
+predicted_disease = get_predicted_value(symptoms_string) # Correctly formatted data dictionary
+
 print(predicted_disease)
 dis_des, precautions, medications, rec_diet, workout = helper(predicted_disease)
 

@@ -11,6 +11,9 @@ import bookingRoute from "./Routes/booking.js";
 import diseaseRoute from "./Routes/disease.js";
 import adminRoute from "./Routes/admin.js";
 import healthPredict from "./Routes/healthPredict.js";
+import contactRoute from "./Routes/contact.js";
+import forgotPassRoute from "./Routes/forgot-password.js";
+
 dotenv.config();
 
 const app = express();
@@ -50,6 +53,9 @@ app.use("/api/v1/bookings", bookingRoute);
 app.use("/api/v1/", diseaseRoute);
 app.use("/api/v1/admin", adminRoute);
 app.use("/api/v1/", healthPredict);
+app.use("/api/v1/", forgotPassRoute);
+app.use("/api/v1/", contactRoute);
+
 app.listen(port, () => {
   connectDB();
   console.log("Server is running on port " + port);

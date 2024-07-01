@@ -49,7 +49,6 @@ const Symptomchk = () => {
         "http://localhost:5000/api/v1/symptoms",
         { data: symptoms }
       );
-      console.log(response);
       setDescription(response.data.data.dis_des);
       setPrecaution(response.data.data.my_precautions);
       setMedications(response.data.data.medications);
